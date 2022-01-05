@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Heading, Box, Image, Stack, Text } from "@chakra-ui/react"
 import axios from "axios"
 import Product from "../interfaces/Product"
-import ProductCard from "../components/ProductCard"
+import Logo from "../../components/Logo"
 
 interface props {
   product: Product | undefined
@@ -14,6 +14,7 @@ const Product = ({ product }: props) => {
       <Head>
         <title>Product </title>
       </Head>
+      <Logo />
 
 
       {product

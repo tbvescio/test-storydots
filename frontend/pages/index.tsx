@@ -5,6 +5,7 @@ import axios from "axios"
 import Product from "../interfaces/Product"
 import ProductCard from "../components/ProductCard"
 import { useState } from 'react'
+import Logo from "../components/Logo"
 
 interface props {
   products: Product[]
@@ -29,8 +30,9 @@ const Home = ({ products }: props) => {
       <Head>
         <title>Products</title>
       </Head>
+
       <HStack marginTop="1em" mx="auto" width="30em" spacing={10}>
-        <Heading textAlign="center" fontWeight="extrabold" >Tienda Story</Heading>
+        <Logo />
         <Button colorScheme="red" onClick={onOpen}>Crear producto</Button>
       </HStack>
       <Heading textAlign="center" fontSize="2xl" marginTop="1em">Productos 👇</Heading>
@@ -93,7 +95,7 @@ export async function getStaticProps() {
 
   return {
     props: { products: products.data },
-    revalidate: 1 // Se va a revalidar cada 10 seg, en prod puede ser mucho mas
+    revalidate: 1 // Se va a revalidar cada 1 seg, en prod puede ser mucho mas
   }
 }
 
